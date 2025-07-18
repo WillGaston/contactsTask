@@ -23,6 +23,7 @@ interface Company {
 }
 
 interface Contact {
+  id: id,
   name: string,
   username: string,
   email: string,
