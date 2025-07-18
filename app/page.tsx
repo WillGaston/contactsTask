@@ -51,7 +51,7 @@ export default function ContactsPage() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data: Contact[]) => {
-        setContacts(data);
+        setContacts(data);5
       });
   }, []);
 
@@ -65,6 +65,7 @@ export default function ContactsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 pb-52">
                 {contacts.map((contact) => (
                     <motion.a
+                        key={contact.id}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         //className="w-full"
