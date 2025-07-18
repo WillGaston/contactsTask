@@ -23,7 +23,7 @@ interface Company {
 }
 
 interface Contact {
-  id: id,
+  id: number,
   name: string,
   username: string,
   email: string,
@@ -52,7 +52,7 @@ export default function ContactsPage() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data: Contact[]) => {
-        setContacts(data);5
+        setContacts(data);
       });
   }, []);
 
