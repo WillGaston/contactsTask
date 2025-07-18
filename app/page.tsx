@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -33,11 +35,11 @@ interface Contact {
 function ContactCard(contact: Contact) {
   return (
     <div className={`p-4 max-w-sm rounded-xl shadow-md border`}>
-      <h2 className="text-xl font-semibold text-gray-800">{contact.name}</h2>
-      <p className="text-black">username: {contact.username}</p>
-      <p className="text-black">email: {contact.email}</p>
-      <p className="text-black">phone: {contact.phone}</p>
-      <p className="text-black">website: {contact.website}</p>
+      <h2 className="text-xl font-semibold text-gray-300">{contact.name}</h2>
+      <p className="text-gray-400">username: <span className="text-white">{contact.username}</span></p>
+      <p className="text-gray-400">email: <span className="text-white">{contact.email}</span></p>
+      <p className="text-gray-400">phone: <span className="text-white">{contact.phone}</span></p>
+      <p className="text-gray-400">website: <span className="text-white">{contact.website}</span></p>
     </div>
   );
 }
@@ -58,7 +60,7 @@ export default function ContactsPage() {
   return (
     <div className="flex flex-col items-center w-screen h-screen">
       <div className='py-16 mx-auto text-center flex flex-col items-center'>
-        <h1 className='text-6xl font-bold font-mono tracking-tighter text-gray-800'>
+        <h1 className='text-6xl font-bold font-mono tracking-tighter text-white'>
           Contacts
         </h1>
       </div>
@@ -67,8 +69,9 @@ export default function ContactsPage() {
                     <motion.a
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-full"
+                        //className="w-full"
                         target="_blank"
+                        className="block rounded-lg shadow-lg bg-gray-800 p-4 transition-transform duration-300 ease-in-out"
                     >
                         <ContactCard {...contact} />
                     </motion.a>
