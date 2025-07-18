@@ -46,14 +46,12 @@ function ContactCard(contact: Contact) {
 
 export default function ContactsPage() {
   const [contacts, setContacts] = useState<Contact[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data: Contact[]) => {
         setContacts(data);
-        setLoading(false);
       });
   }, []);
 
